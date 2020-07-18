@@ -2,5 +2,12 @@
 <input #activityName placeholder="Activity">
 <button class="btn btn-success" (click)="add(activityName.value); activityName.value = ''">Add</button>
 <a *ngFor="let activity of activityList">
-    <h3>{{activity.name}}</h3>
+    <table>
+        <th>
+            <h3>{{activity.name}}</h3>
+        </th>
+        <th>
+            <button class="btn btn-dark" (click)="deleteActivity(activity.id);">X</button>
+        </th>
+    </table>
 </a>

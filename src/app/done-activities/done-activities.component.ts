@@ -10,14 +10,19 @@ import { ActivityService } from '../activity.service';
 export class DoneActivitiesComponent implements OnInit {
   activityDone: Activity[] = [];
   
-  constructor(protected acivityService: ActivityService) { }
+  constructor(protected activityService: ActivityService) { }
 
   ngOnInit(): void {
-    this.getActivityList();
+    this.getActivityDone();
   }
-  getActivityList(): void
+  getActivityDone(): void
   {
-    this.activityDone = this.acivityService.getActivityDone();
+    this.activityDone = this.activityService.getActivityDone();
   }
 
+  deleteActivityDone(id: number): void
+  {
+    this.activityService.deleteActivityDone(id);
+    this.getActivityDone();
+  }
 }

@@ -25,4 +25,16 @@ export class ActivityService{
         ++this.index;
         ACTIVITIESLIST.push({id: this.index, name: activityName});
     }
+    deleteActivity(id: number): void
+    {
+        const Index = ACTIVITIESLIST.findIndex(activity => activity.id === id);
+        console.log("deleted " + Index);
+        ACTIVITIESLIST.splice(Index,1);
+    }
+    deleteActivityDone(id: number)
+    {
+        const Index = ACTIVITIESDONE.findIndex(activity => activity.id === id);
+        console.log("deleted " + Index);
+        ACTIVITIESDONE.splice(Index,1);
+    }
 }
