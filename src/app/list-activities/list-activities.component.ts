@@ -19,9 +19,15 @@ export class ListActivitiesComponent implements OnInit {
   {
     this.activityList = this.activityService.getActivityList();
   }
+  
   deleteActivity(id: number): void
   {
     this.activityService.deleteActivity(id);
     this.getActivityList();
+  }
+
+  moveFromListToDoneList(id: number)
+  {
+    this.activityService.moveFromListToDoneList(id);
   }
 }

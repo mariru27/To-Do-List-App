@@ -37,4 +37,28 @@ export class ActivityService{
         console.log("deleted " + Index);
         ACTIVITIESDONE.splice(Index,1);
     }
+   
+    moveFromListToDoneList(id: number)
+    {
+        const Index = ACTIVITIESLIST.findIndex(activity => activity.id === id);
+        const ActivityObj = ACTIVITIESLIST.find(activity => activity.id === id);
+
+        ACTIVITIESDONE.push(ActivityObj);
+        console.log("added " + ActivityObj + " to Done List");
+
+        ACTIVITIESLIST.splice(Index,1);
+        console.log("deleted from list " + ActivityObj);
+
+    }
+    moveFromDoneToList(id: number)
+    {
+        const Index = ACTIVITIESDONE.findIndex(activity => activity.id === id);
+        const ActivityObj = ACTIVITIESDONE.find(activity => activity.id === id);
+
+        ACTIVITIESLIST.push(ActivityObj);
+        console.log("added " + ActivityObj + " Activity List");
+
+        ACTIVITIESDONE.splice(Index,1);
+        console.log("deleted from Done List " + ActivityObj);
+    }
 }

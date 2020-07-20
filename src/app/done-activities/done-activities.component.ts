@@ -25,4 +25,8 @@ export class DoneActivitiesComponent implements OnInit {
     this.activityService.deleteActivityDone(id);
     this.getActivityDone();
   }
+  moveFromDoneToList(id: number)
+  {
+    this.activityService.moveFromDoneToList(id);
+  }
 }

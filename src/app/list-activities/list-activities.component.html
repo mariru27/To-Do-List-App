@@ -4,7 +4,7 @@
     <table>
         <tr>
             <th>
-                <input type="checkbox"/>
+                <input type="checkbox" (change)="moveFromListToDoneList(activity.id);"/>
             </th>
             <th>
                 <h3>{{activity.name}}</h3>
